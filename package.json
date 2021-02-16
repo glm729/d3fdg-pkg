@@ -1,0 +1,49 @@
+{
+  "name": "d3fdg-pkg",
+  "version": "0.0.0",
+  "description": "Packaged version of the D3 FDG visualisation for metabolites.",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "eslint": "eslint src",
+    "eslint-fix": "npm run eslint -- --fix",
+    "prepublishOnly": "rollup -c",
+    "test": "npm run test-coverage && npm run eslint",
+    "test-coverage": "jest --coverage",
+    "test-only": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glm729/d3fdg-pkg.git"
+  },
+  "keywords": [],
+  "author": "George",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/glm729/d3fdg-pkg/issues"
+  },
+  "homepage": "https://github.com/glm729/d3fdg-pkg#readme",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.12.13",
+    "@types/jest": "^26.0.20",
+    "eslint": "^7.20.0",
+    "eslint-config-cheminfo": "^5.2.2",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "rollup": "^2.39.0"
+  }
+}
