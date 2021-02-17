@@ -58,7 +58,7 @@ export function getWithLinks(withId, opposeReduced) {
  * @return {Array} The input Array of Objects, sorted by the specified
  * attribute
  */
-export function sortJsonAttr(obj, key = "name") {
+export function sortJsonAttr(obj, key = 'name') {
   let output = new Array();
   [...new Set(obj.map(o => o[key]))].sort().map(j => {
     obj.filter(o => o[key] === j).map(o => output.push(o));
@@ -80,7 +80,7 @@ export async function unzip(content) {
   let zip = await jsz.loadAsync(content);
   let results = {};
   for (let k in zip.files) {
-    let fileContent = await zip.files[k].async("string");
+    let fileContent = await zip.files[k].async('string');
     results[k.replace(/\..+$/, '')] = fileContent;
   };
   return results;
