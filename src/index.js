@@ -30,7 +30,7 @@ export function arrayScale(arr, min = 0, max = 1) {
 export function assignEmptyHeader(ofLength) {
   let result = [];
   for (let i = 0; i < ofLength; ++i) {
-    result.push("v" + String(i).padStart(String(ofLength).length, "0"));
+    result.push(`v${String(i).padStart(String(ofLength).length, '0')}`);
   };
   return result;
 }
