@@ -1,12 +1,4 @@
 /**
- * Returns a very important number
- * @return {number}
- */
-export function myModule() {
-  return 42;
-}
-
-/**
  * Function for scaling an array of values.  Definitions of functions for
  * finding the minimum and maximum of an array of values are defined
  * internally, but should probably be defined externally (and perhaps in a less
