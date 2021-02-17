@@ -8,7 +8,7 @@
  * @param {Number} max Maximum value by which to scale
  * @return {Array} New array of scaled values
  */
-function arrayScale(arr, min = 0, max = 1) {
+export function arrayScale(arr, min = 0, max = 1) {
   let f = {
     min: (a) => a.reduce((b, c) => ((b > c) ? c : b), a[0]),
     max: (a) => a.reduce((b, c) => ((b > c) ? b : c), a[0])
@@ -27,7 +27,7 @@ function arrayScale(arr, min = 0, max = 1) {
  * @return {Array} Array of dummy names of the form `vPN`, where `P` is the
  * zero-padding (if applicable), and `N` is the current number.
  */
-function assignEmptyHeader(ofLength) {
+export function assignEmptyHeader(ofLength) {
   let result = [];
   for (let i = 0; i < ofLength; ++i) {
     result.push("v" + String(i).padStart(String(ofLength).length, "0"));
@@ -46,7 +46,7 @@ function assignEmptyHeader(ofLength) {
  * @return {Array} withId filtered to select only those entries with an anchor
  * ID found in the reduced opposing compounds data
  */
-function getWithLinks(withId, opposeReduced) {
+export function getWithLinks(withId, opposeReduced) {
   let idAll = opposeReduced.map(x => [x.lhs, x.rhs]).flat();
   return withId.filter(x => idAll.indexOf(x.idAnchor) !== -1);
 }
@@ -58,7 +58,7 @@ function getWithLinks(withId, opposeReduced) {
  * @return {Array} The input Array of Objects, sorted by the specified
  * attribute
  */
-function sortJsonAttr(obj, key = "name") {
+export function sortJsonAttr(obj, key = "name") {
   let output = new Array();
   [...new Set(obj.map(o => o[key]))].sort().map(j => {
     obj.filter(o => o[key] === j).map(o => output.push(o));
@@ -75,7 +75,7 @@ function sortJsonAttr(obj, key = "name") {
  * @return {Object} Contents of each file within the ZIP, whereby the key is
  * the filename without the file extension
  */
-async function unzip(content) {
+export async function unzip(content) {
   let jsz = new JSZip();
   let zip = await jsz.loadAsync(content);
   let results = {};
